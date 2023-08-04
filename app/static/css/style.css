@@ -1,0 +1,47 @@
+.table-container {
+    width: 75%;
+    height: 75%;
+    overflow: auto;
+}
+
+table {
+	border-collapse: collapse;
+    font-family: Tahoma, Geneva, sans-serif;
+	text-align: center;
+	table-layout: auto;
+	width: max-content;
+}
+
+ th:first-child {
+	position:sticky;
+	left:0;
+	z-index:1;
+	background-color: grey ;
+	color:#dddfe1;
+  }
+
+table td {
+	padding: 15px;
+}
+
+table thead tr {
+	background-color: #54585d;
+	color: #ffffff;
+	font-weight: bold;
+	font-size: 13px;
+	border: 1px solid #54585d;
+}
+
+table thead tr td{
+	height: auto;
+	text-align: center !important;
+	font-size: large;
+}
+
+table tbody td {
+	color: #636363;
+	border: 1px solid #dddfe1;
+}
+table tbody tr {
+	background-color: #f9fafb;
+}

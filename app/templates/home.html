@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Home</title>
+    <link rel="stylesheet" href="static/css/style.css">
+</head>
+
+<body>
+    <h2>{{title}}</h2>
+    {% block content %}
+    <form method="post">
+        <input type="text" name="search_query" placeholder="Search by Name" value="{{ request.form['search_query'] }}">
+        </input>
+        <button type="submit">Go</button>
+    </form>
+    {% endblock %}
+    <br>
+    <div class="table-container">
+    <table border="1" class="dataframe data">
+            <thead>
+                <tr class="data">
+                    {%for h in header%}
+                    <td>
+                        {{h}}
+                    </td>
+                    {% endfor %}
+                </tr>
+            </thead>
+                {{table|safe}}
+        </table>
+    </div>
+</body>
+
+</html>
