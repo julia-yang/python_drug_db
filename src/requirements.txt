@@ -4,6 +4,7 @@ Flask_Bootstrap==3.3.7
 flask_sqlalchemy==3.0.3
 gunicorn==19.7.1
 pandas==1.2.4
+pymysql==1.1.0
 python-dotenv==0.21.1
 SQLAlchemy==1.4.46
 WTForms==3.0.1
