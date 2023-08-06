@@ -1,7 +1,19 @@
+form{
+	position:relative;
+}
+
 .table-container {
+	border: 5px;
     width: 75%;
     height: 75%;
     overflow: auto;
+	margin: auto;
+}
+
+.form-container {
+	margin: auto;
+	display: grid;
+	grid-template-columns: 40% 10%  ;
 }
 
 table {
@@ -30,11 +42,12 @@ table thead tr {
 	font-weight: bold;
 	font-size: 13px;
 	border: 1px solid #54585d;
+	text-align: center !important;
+	font-size: large;
 }
 
 table thead tr td{
 	height: auto;
-	text-align: center !important;
 	font-size: large;
 }
 
