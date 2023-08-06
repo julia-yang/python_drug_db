@@ -15,8 +15,9 @@ The category search is customizable and currently set up for the following two c
 The raw data can be viewed and edited using Flask Admin at the following url:
 https://sample-python-db-app.onrender.com/admin
 
-styling: https://codeshack.io/html-styling-tables-example/
-dataset: https://www.kaggle.com/datasets/maheshdadhich/us-healthcare-data?select=Drugs_product.csv
+styling source: https://codeshack.io/html-styling-tables-example/
 
-run app.py
+dataset source: https://www.kaggle.com/datasets/maheshdadhich/us-healthcare-data?select=Drugs_product.csv
+
+
 
