@@ -1,4 +1,4 @@
 CLASSIFICATION_MAPPINGS = {
     "cardiovascular": ["Antiarrhythmic", "HMG-CoA Reductase Inhibitor"],
-    "antidepressant": ["Serotonin Reuptake Inhibitor", "Norepinephrine Reuptake Inhibitor"],
+    "antidepressant": ["Serotonin Uptake Inhibitor", "Norepinephrine Uptake Inhibitor"],
 }
