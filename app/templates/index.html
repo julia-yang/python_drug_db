@@ -2,12 +2,13 @@
 <html>
 
 <head>
-    <a href="{{url_for(app.home)}}" >Browse the U.S. Drug Product Database</a>
+    <title>U.S. Drug Product Database</title>
     <link rel="stylesheet" href="static/css/style.css">
 </head>
 
 <body>
-    <h2>{{title}}</h2>
+    <h2 class="big-title">{{title}}</h2>
+    <a href="/" class="home-button">Back to Home Page</a>
     {% block content %}
     {% from "_formhelpers.html" import render_field %}
 <form method="post">
