@@ -51,7 +51,7 @@ class DrugProduct(db.Model):
     dea_schedule = db.Column('DEA SCHEDULE', db.Text)
 
     
-df = pd.read_csv('C:/Users/JD/Desktop/Drug_Lookup/app/drug_products.csv', usecols=csv_cols)[csv_cols]
+df = pd.read_csv('C:/Users/JD/Desktop/Drug_Lookup/src/drug_products.csv', usecols=csv_cols)[csv_cols]
 df.to_sql('drug_product', con=engine, if_exists='replace', index=False)
 
 
