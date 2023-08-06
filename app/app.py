@@ -7,8 +7,12 @@ from flask_bootstrap import Bootstrap
 from forms import DrugSearchForm
 
 import pandas as pd
+from dotenv import load_dotenv
+import os
 
-secret_url = 'mysql+pymysql://admin:testeradmin@database-2.clwep7hsnc47.us-east-1.rds.amazonaws.com:3306/drugdb'
+load_dotenv()
+
+secret_url = os.getenv('SECRET_URL')
 app = Flask(__name__)
 Bootstrap(app)
 app.config['FLASK_ADMIN_FLUID_LAYOUT'] = True
