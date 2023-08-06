@@ -5,6 +5,7 @@ from flask_sqlalchemy import SQLAlchemy
 import sqlalchemy 
 from flask_bootstrap import Bootstrap
 from forms import DrugSearchForm
+from classification_map  import CLASSIFICATION_MAPPINGS
 
 import pandas as pd
 from dotenv import load_dotenv
@@ -75,13 +76,16 @@ def search_results(search):
         results = db.session.query(DrugProduct).limit(15).all()
         results_desc = "Displaying top 15 results (" + str(db.session.query(DrugProduct).count()) + " found)"
     else:
-        search_query=f'%{search_query}%'
         if select_query == 'Name':
+            search_query=f'%{search_query}%'
             results = db.session.query(DrugProduct).filter(DrugProduct.proprietary_name.ilike(search_query) 
                                                         | DrugProduct.non_proprietary_name.ilike(search_query))
-        elif select_query == 'Classification':
-            results = db.session.query(DrugProduct).filter(DrugProduct.pharm_classes.ilike(search_query))
-        
+        elif select_query == 'Clinical Category':
+            classes = CLASSIFICATION_MAPPINGS.get(search_query.lower())
+            if classes:
+                results = db.session.query(DrugProduct).filter(or_(*[DrugProduct.pharm_classes.ilike(f'%{c}%') for c in classes]))
+            else:
+                results = None  
         if not results:
             results_desc = "No results found."
             return render_template('index.html', form=search, results_desc=results_desc, title='Drug Information Database')
