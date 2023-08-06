@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>U.S. Drug Product Database</title>
+    <link rel="stylesheet" href="static/css/style.css">
+</head>
+
+<body>
+    <h2>{{title}}</h2>
+    {% block content %}
+    {% from "_formhelpers.html" import render_field %}
+<form method="post">
+    <div class="form-container"> 
+        {{ render_field(form.search) }}
+        {{ render_field(form.select) }}
+    </div>
+<input type="submit" value="Go">
+</form>
+</doctype>
+    {% endblock %}
+    <br>
+    <div class="results-desc">
+        <h3>{{results_desc}}</h3>
+    </div>
+    <div class="table-container">
+    <table>
+        {{table|safe}}
+        </table>
+    </div>
+</body>
+
+</html>
