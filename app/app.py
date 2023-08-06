@@ -83,7 +83,7 @@ def search_results(search):
         elif select_query == 'Clinical Category':
             classes = CLASSIFICATION_MAPPINGS.get(search_query.lower())
             if classes:
-                results = db.session.query(DrugProduct).filter(or_(*[DrugProduct.pharm_classes.ilike(f'%{c}%') for c in classes]))
+                results = db.session.query(DrugProduct).filter(sqlalchemy.or_(*[DrugProduct.pharm_classes.ilike(f'%{c}%') for c in classes]))
             else:
                 results = None  
         if not results:
