@@ -38,6 +38,7 @@ csv_cols = [
 db = SQLAlchemy(app)
 class DrugProduct(db.Model):
     __tablename__ = "drug_product"
+    __table_args__ = {'extend_existing': True}
     product_id = db.Column('PRODUCT ID', db.Text, primary_key=True)
     product_type_name = db.Column('PRODUCT TYPE NAME', db.Text)
     proprietary_name = db.Column('PROPRIETARY NAME', db.Text)
