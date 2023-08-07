@@ -1,7 +1,7 @@
 # python_drug_db
 https://sample-python-db-app.onrender.com/
 
-Teaching myself how to use Flask by making a wep app to browse th FDA's database of drugs.
+Teaching myself how to use Flask by making a wep app to browse the FDA's database of drugs.
 
 From the home page, users can search through the database by name or category.
 
