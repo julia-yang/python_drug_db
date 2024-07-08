@@ -17,7 +17,7 @@ secret_url = os.environ.get('SECRET_URL')
 app = Flask(__name__)
 Bootstrap(app)
 app.config['FLASK_ADMIN_FLUID_LAYOUT'] = True
-app.config['SECRET_KEY'] = '8555486146236c44c97d1f5b1d9f90ae384edb39c9208148'
+app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY')
 app.config['SQLALCHEMY_DATABASE_URI'] = secret_url
 engine = sqlalchemy.create_engine(secret_url)
 
