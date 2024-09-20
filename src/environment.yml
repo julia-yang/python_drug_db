@@ -1,0 +1,13 @@
+name: pydrugdb
+channels:
+  - defaults
+dependencies:
+  - pip
+  - pip:
+    - python-dotenv
+    - sqlalchemy
+    - flask
+    - flask-admin
+    - flask-sqlalchemy
+    - flask-bootstrap
+    - pandas

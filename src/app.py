@@ -13,7 +13,8 @@ import os
 
 load_dotenv()
 
-secret_url = os.environ.get('SECRET_URL')
+# secret_url = os.environ.get('SECRET_URL')
+secret_url = "sqlite:///fda.db"
 app = Flask(__name__)
 Bootstrap(app)
 app.config['FLASK_ADMIN_FLUID_LAYOUT'] = True
@@ -52,7 +53,7 @@ class DrugProduct(db.Model):
     dea_schedule = db.Column('DEA SCHEDULE', db.Text)
 
     
-df = pd.read_csv('drug_products.csv', usecols=csv_cols)[csv_cols]
+df = pd.read_csv('drug_products.csv', usecols=csv_cols, encoding = 'unicode_escape')[csv_cols]
 df.to_sql('drug_product', con=engine, if_exists='replace', index=False)
 
 
