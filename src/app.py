@@ -13,8 +13,7 @@ import os
 
 load_dotenv()
 
-# secret_url = os.environ.get('SECRET_URL')
-secret_url = "sqlite:///fda.db"
+secret_url = os.environ.get('SECRET_URL')
 app = Flask(__name__)
 Bootstrap(app)
 app.config['FLASK_ADMIN_FLUID_LAYOUT'] = True
