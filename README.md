@@ -1,5 +1,5 @@
 # python_drug_db
-[deprecated] https://sample-python-db-app.onrender.com/
+https://sample-python-db-app.onrender.com/
 
 Teaching myself how to use Flask by making a wep app to browse the FDA's database of drugs.
 
