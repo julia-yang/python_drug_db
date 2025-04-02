@@ -39,7 +39,11 @@ csv_cols = [
     'DEA SCHEDULE'
 ]
 
-s3 = boto3.client('s3', ) 
+s3 = boto3.client(
+    's3', 
+    aws_access_key_id=os.environ.get('AWS_ACCESS_KEY'),
+    aws_secret_access_key=os.environ.get('AWS_SECRET_KEY')) 
+
 csv_obj = s3.get_object(Bucket="python-drug-db", Key="Drugs_product.csv")
 df = pd.read_csv(csv_obj.get("Body"), names=csv_cols, encoding = 'unicode_escape', header=0)
 df.to_sql('drug_product', con=sqlalchemy.create_engine(secret_url), if_exists='replace', index=False)
