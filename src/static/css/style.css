@@ -1,65 +1,186 @@
-.big-title{
-	text-align: center;
-	margin:auto;
+/* Root variables for color and spacing */
+:root {
+    --primary: #4b5c6b;
+    --primary-dark: #2c3a47;
+    --background: #f8fafc;
+    --surface: #fff;
+    --border: #e5e7eb;
+    --text: #22223b;
+    --accent: #a3b1c6;
+    --radius: 10px;
+    --shadow: 0 2px 8px rgba(0,0,0,0.06);
 }
 
-.home-button{
-	margin:auto;
+body {
+    background: var(--background);
+    color: var(--text);
+    font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+.home-link {
+    color: var(--primary-dark);
+    text-decoration: none;
+    font-weight: 500;
+    margin-top: 0.5rem;
+    transition: color 0.2s;
+}
+.home-link:hover {
+    color: var(--accent);
+}
+
+.search-section {
+    margin-bottom: 2rem;
+}
+
+.search-form {
+    background: var(--surface);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 1.5rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.form-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.form-group {
+    flex: 1 1 180px;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group-button {
+    flex: 0 0 120px;
+    display: flex;
+    align-items: flex-end;
+}
+
+.search-btn {
+    width: 100%;
+    padding: 0.7rem 0;
+    background: var(--primary);
+    color: #fff;
+    border: none;
+    border-radius: var(--radius);
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.search-btn:hover {
+    background: var(--primary-dark);
+}
+
+input[type="text"], select {
+    padding: 0.6rem 0.8rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    font-size: 1rem;
+    background: #f9fafb;
+    color: var(--text);
+    outline: none;
+    transition: border 0.2s;
+}
+input[type="text"]:focus, select:focus {
+    border-color: var(--primary);
+}
+
+.results-desc {
+    margin: 1.5rem 0 1rem 0;
+    text-align: center;
+    color: var(--primary-dark);
+}
+
+.table-section {
+    margin-bottom: 2rem;
 }
 
 .table-container {
-	border: 5px;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-	margin: auto;
-}
-
-.form-container {
-	margin: auto;
-	display: grid;
-	grid-template-columns: 40% 10%  ;
+    background: var(--surface);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    overflow-x: auto;
+    padding: 1rem;
 }
 
 table {
-	border-collapse: collapse;
-    font-family: Tahoma, Geneva, sans-serif;
-	text-align: center;
-	table-layout: auto;
-	width: max-content;
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 1rem;
+    background: var(--surface);
+}
+thead {
+    background: var(--primary);
+    color: #fff;
+}
+th, td {
+    padding: 0.75rem 0.5rem;
+    border: 1px solid var(--border);
+    text-align: left;
+}
+th {
+    font-weight: 600;
+}
+tbody tr:nth-child(even) {
+    background: #f1f5f9;
+}
+tbody tr:hover {
+    background: #e0e7ef;
 }
 
- th:first-child {
-	position:sticky;
-	left:0;
-	z-index:1;
-	background-color: grey ;
-	color:#dddfe1;
-  }
-
-table td {
-	padding: 15px;
+/* Responsive adjustments */
+@media (max-width: 700px) {
+    .container {
+        padding: 1rem 0.2rem;
+    }
+    .form-row {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    .form-group-button {
+        align-items: stretch;
+    }
+    .search-form {
+        padding: 1rem 0.5rem;
+    }
+    th, td {
+        font-size: 0.95rem;
+        padding: 0.5rem 0.3rem;
+    }
 }
 
-table thead tr {
-	background-color: #54585d;
-	color: #ffffff;
-	font-weight: bold;
-	font-size: 13px;
-	border: 1px solid #54585d;
-	text-align: center !important;
-	font-size: large;
-}
-
-table thead tr td{
-	height: auto;
-	font-size: large;
-}
-
-table tbody td {
-	color: #636363;
-	border: 1px solid #dddfe1;
-}
-table tbody tr {
-	background-color: #f9fafb;
+/* Error feedback for forms */
+.invalid-feedback {
+    color: #d90429;
+    font-size: 0.95em;
+    margin-top: 0.2em;
 }
